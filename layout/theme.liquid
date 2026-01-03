@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {% if settings.favicon != blank %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {% endif %}
+
+  <!-- CSS Styles -->
+  {{ 'styles.css' | asset_url | stylesheet_tag }}
+
+  {{ content_for_header }}
+
+  <style>
+    /* Additional custom styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background-color: white;
+      border-bottom: 1px solid rgb(229, 231, 235);
+    }
+
+    .main-content {
+      padding-top: 0;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      z-index: 100;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: block;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-menu-button {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  {% section 'header' %}
+
+  <main class="main-content" role="main">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+
+  <script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) {
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      }
+    }
+
+    // Close mobile menu on link click
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.mobile-menu a')) {
+        toggleMobileMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>

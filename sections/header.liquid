@@ -1,0 +1,62 @@
+<header class="header">
+  <div class="container mx-auto">
+    <div class="flex items-center justify-between py-4">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <a href="/" class="flex items-center gap-2 text-blue-600 font-bold text-xl">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>PonoBuilder</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <ul class="flex items-center gap-6">
+          <li><a href="/" class="text-gray-700 hover:text-blue-600 font-medium transition">Home</a></li>
+          <li><a href="/pages/products" class="text-gray-700 hover:text-blue-600 font-medium transition">Products</a></li>
+          <li><a href="/pages/about" class="text-gray-700 hover:text-blue-600 font-medium transition">About</a></li>
+          <li><a href="/pages/how-it-works" class="text-gray-700 hover:text-blue-600 font-medium transition">How It Works</a></li>
+          <li><a href="/pages/quote" class="btn btn-primary">Get Quote</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <button class="mobile-menu-close" onclick="toggleMobileMenu()" aria-label="Close menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="flex flex-col gap-6 mt-12">
+      <a href="/" class="text-2xl font-semibold text-gray-900">Home</a>
+      <a href="/pages/products" class="text-2xl font-semibold text-gray-900">Products</a>
+      <a href="/pages/about" class="text-2xl font-semibold text-gray-900">About</a>
+      <a href="/pages/how-it-works" class="text-2xl font-semibold text-gray-900">How It Works</a>
+      <a href="/pages/quote" class="btn btn-primary btn-lg w-full mt-4">Get Quote</a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": []
+}
+{% endschema %}

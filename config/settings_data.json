@@ -1,0 +1,13 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header"
+      },
+      "footer": {
+        "type": "footer"
+      }
+    },
+    "content_for_index": []
+  }
+}

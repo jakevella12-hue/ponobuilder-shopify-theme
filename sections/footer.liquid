@@ -1,0 +1,70 @@
+<footer class="bg-gray-900 text-white py-12">
+  <div class="container mx-auto px-6">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <!-- Company Info -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="font-bold text-xl">PonoBuilder</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Premium modular pontoon systems for marinas, docks, and waterfront properties.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="text-gray-400 hover:text-white transition text-sm">Home</a></li>
+          <li><a href="/pages/products" class="text-gray-400 hover:text-white transition text-sm">Products</a></li>
+          <li><a href="/pages/about" class="text-gray-400 hover:text-white transition text-sm">About Us</a></li>
+          <li><a href="/pages/how-it-works" class="text-gray-400 hover:text-white transition text-sm">How It Works</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h3 class="font-semibold text-lg mb-4">Support</h3>
+        <ul class="space-y-2">
+          <li><a href="/pages/quote" class="text-gray-400 hover:text-white transition text-sm">Request Quote</a></li>
+          <li><a href="/pages/contact" class="text-gray-400 hover:text-white transition text-sm">Contact Us</a></li>
+          <li><a href="/pages/faq" class="text-gray-400 hover:text-white transition text-sm">FAQ</a></li>
+          <li><a href="/pages/warranty" class="text-gray-400 hover:text-white transition text-sm">Warranty</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="font-semibold text-lg mb-4">Contact</h3>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li>Email: info@ponobuilder.com</li>
+          <li>Phone: (555) 123-4567</li>
+          <li>Hours: Mon-Fri 8AM-6PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-400">
+        &copy; {{ 'now' | date: '%Y' }} PonoBuilder. All rights reserved.
+      </p>
+      <div class="flex gap-4 text-sm text-gray-400">
+        <a href="/pages/privacy" class="hover:text-white transition">Privacy Policy</a>
+        <a href="/pages/terms" class="hover:text-white transition">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}
